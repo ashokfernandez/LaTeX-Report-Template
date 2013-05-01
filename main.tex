@@ -22,18 +22,9 @@
 % If you want to include jpeg or pdf pictures
 \usepackage{graphicx} 
 
-% Makes the chapter headers not say 'Chapter 1'
-\usepackage{titlesec} 
-\titleformat{\chapter}
- {\normalfont\huge\bfseries}{\thechapter}{1em}{}
-
-% Changes the chapter font
-%\titleformat{\chapter}[display]
-%{\normalfont\huge\bfseries}{\thechapter}{20pt}{\Huge}
-
 % Helvetica Font
-%\renewcommand{\familydefault}{\sfdefault} 
-%\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault} 
+\usepackage{helvet}
 
 % Wraps text around figures
 \usepackage{wrapfig} 
@@ -41,7 +32,7 @@
 % Include PDFs
 \usepackage{pdfpages}
 
-% Bibliography
+% Set bibliography engine as biblatex
 \usepackage[backend=bibtex,
 style=numeric
 %style=alphabetic
@@ -49,12 +40,11 @@ style=numeric
 ]{biblatex}
 \addbibresource{references}
 
-% This alters "before" spacing (the second length argument) to 0
-\titlespacing*{\chapter}{0pt}{0pt}{30pt}
-
-% Reduce the margins
+% Reduce the margins of the page
 \usepackage[margin=0.7in]{geometry} 
 
+% Allows the title formats to be modified
+\usepackage{titlesec} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PRELIMINARY MATERIAL
@@ -72,8 +62,16 @@ style=numeric
 % Add the table of contents
 \tableofcontents 
 
+% Makes the chapter headers not say 'Chapter 1'
+\titleformat{\chapter}[display]
+ {\normalfont\huge\bfseries}{}{1em}{}
+
+% Alters the space before and after the title
+\titlespacing*{\chapter}{0pt}{-5em}{30pt}
+
 % Line spacing for the remainder of the document
 \setlength{\parskip}{0.8em}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
